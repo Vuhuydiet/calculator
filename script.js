@@ -64,6 +64,7 @@ let evaluate = (expression) => {
 
 const MAX_CHARS = 30;
 let expression = '';
+let result = '';
 let chars_count = 0;
 
 let expression_div = document.querySelector('.expression');
@@ -86,8 +87,7 @@ calculator_div.addEventListener('click', (e) => {
             chars_count = 0;
             break;
         case "=":
-            let result = evaluate(expression);
-            result_div.innerText = result;
+            result = evaluate(expression);
             break;
         default:
             if (chars_count >= MAX_CHARS) {
